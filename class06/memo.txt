@@ -1,0 +1,25 @@
+koya-mac:linux-4.13.9 tkoyama$ grep -r " fork(" *|grep kernel
+Documentation/sysctl/kernel.txt:using fork().
+arch/alpha/kernel/process.c:	childregs->r20 = 1;	/* OSF/1 has some strange fork() semantics.  */
+arch/ia64/kernel/smp.c:	/* this happens for the common case of a single-threaded fork():  */
+arch/mips/kernel/unaligned.c: * across fork(2) and execve(2) calls.	If you really want to use the
+arch/openrisc/kernel/process.c:		userregs->gpr[11] = 0;	/* Result from fork() */
+arch/powerpc/kernel/process.c:		childregs->gpr[3] = 0;  /* Result from fork() */
+arch/sparc/kernel/process_32.c:/* Copy a Sparc thread.  The fork() return value conventions
+arch/sparc/kernel/process_64.c:/* Copy a Sparc thread.  The fork() return value conventions
+arch/sparc/kernel/syscalls.S:	/* This is how fork() was meant to be done, 8 instruction entry.
+arch/tile/kernel/process.c:	 * fork() clears the pending signals, alarms, and aio for the child.
+arch/x86/kernel/ioport.c: * on system-call entry - see also fork() and the signal handling
+kernel/cgroup/cgroup.c: * To reduce the fork() overhead for systems that are not actually using
+kernel/cgroup/cgroup.c:	 * Nothing is sensitive to fork() after this point.  Notify
+kernel/cgroup/cgroup.c: * call the subsystem fork() callbacks.  Has to be after the task is
+kernel/cgroup/pids.c: * Used to allow a cgroup hierarchy to stop any new processes from fork()ing
+kernel/cgroup/pids.c: * violate a cgroup policy through fork(). fork() will return -EAGAIN if forking
+kernel/cgroup/pids.c:	 * critical that any racing fork()s follow the new limit.
+kernel/cred.c: * Copy credentials for the new process created by fork()
+kernel/events/core.c:	 * Since pinned accounting is per vm we cannot allow fork() to copy our
+kernel/events/core.c: * perf_event_init_task below, used by fork() in case of fail.
+kernel/events/uprobes.c:	/* The task can fork() after dup_xol_work() fails */
+kernel/exit.c:		 * by setns() + fork().
+kernel/sched/core.c: * fork()/clone()-time setup:
+kernel/seccomp.c: * However, multiple filters may share a @prev node, by way of fork(), which
